@@ -1,16 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Razan Mhanna</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #444;
+      background: #ffffff;
+    }
+
+    nav {
+      height: 70px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      padding: 0 50px;
+      gap: 50px;
+      font-size: 22px;
+    }
+
+    nav .name {
+      font-weight: bold;
+      color: #2f3a45;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2f3a45;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 60px auto;
+      gap: 70px;
+      padding: 0 40px;
+    }
+
+    .sidebar {
+      width: 260px;
+    }
+
+    .photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .sidebar h2 {
+      margin-top: 25px;
+      font-size: 26px;
+      color: #3f464d;
+    }
+
+    .sidebar p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .info {
+      margin-top: 30px;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .main {
+      flex: 1;
+      font-size: 24px;
+      line-height: 1.6;
+    }
+
+    .main h1 {
+      font-size: 42px;
+      color: #3f464d;
+      margin-top: 0;
+    }
+
+    .main h2 {
+      margin-top: 45px;
+      color: #3f464d;
+    }
+
+    a {
+      color: #23869b;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Razan Mhanna</h1>
-  <p>PhD student in applied mathematics and brain network analysis.</p>
 
-  <h2>Research</h2>
-  <p>My research focuses on rs-fMRI, functional connectivity, graph-based modeling, and machine learning.</p>
+  <nav>
+    <div class="name">Razan Mhanna</div>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#cv">CV</a>
+  </nav>
 
-  <h2>Contact</h2>
-  <p>Email: your-email@example.com</p>
+  <div class="container">
+
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Razan Mhanna" class="photo">
+
+      <h2>Razan Mhanna</h2>
+      <p>PhD student in applied mathematics and brain network analysis.</p>
+
+      <div class="info">
+        📍 Grenoble, France<br>
+        🏛️ Université Grenoble Alpes<br>
+        🏛️ Inria / LJK / GIN<br>
+        ✉️ <a href="mailto:your-email@example.com">Email</a><br>
+        💻 <a href="https://github.com/Razan-Mhanna">GitHub</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <h1>Razan Mhanna</h1>
+
+      <p>
+        I am a PhD student at Université Grenoble Alpes, working on statistical
+        learning for resting-state fMRI and brain network analysis.
+      </p>
+
+      <p>
+        My research focuses on functional connectivity, graph-based modeling,
+        uncertainty-aware brain networks, and machine learning methods for
+        neuroimaging data.
+      </p>
+
+      <h2 id="research">Research</h2>
+      <p>
+        I am interested in developing interpretable and robust methods for
+        modeling brain connectivity, with applications to clinical neuroscience
+        and cognitive datasets.
+      </p>
+
+      <h2 id="publications">Publications</h2>
+      <p>
+        Coming soon.
+      </p>
+
+      <h2 id="teaching">Teaching</h2>
+      <p>
+        Coming soon.
+      </p>
+
+      <h2 id="cv">CV</h2>
+      <p>
+        CV coming soon.
+      </p>
+    </main>
+
+  </div>
+
 </body>
 </html>
