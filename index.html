@@ -1,1 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Razan Mhanna</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #2f3542;
+      background: #ffffff;
+      font-size: 16px;
+    }
+
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 65px;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 24px;
+      color: #2f3542;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #0f766e;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 60px auto;
+      padding: 0 30px;
+      display: flex;
+      gap: 70px;
+    }
+
+    .sidebar {
+      width: 280px;
+      flex-shrink: 0;
+    }
+
+    .photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e5e7eb;
+    }
+
+    .sidebar h2 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .sidebar p {
+      line-height: 1.55;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .profile-info {
+      margin-top: 25px;
+    }
+
+    .profile-info p {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 13px 0;
+      font-size: 16px;
+    }
+
+    .profile-info i {
+      width: 22px;
+      font-size: 17px;
+      color: #2f3542;
+    }
+
+    .main {
+      flex: 1;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-top: 0;
+      margin-bottom: 25px;
+      color: #2f3542;
+    }
+
+    h2 {
+      font-size: 30px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    .hero p,
+    .page p {
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .research-list {
+      margin-top: 15px;
+      padding-left: 25px;
+      line-height: 1.9;
+      font-size: 18px;
+    }
+
+    .research-list li {
+      margin-bottom: 8px;
+    }
+
+    .project {
+      margin-top: 35px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .project h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: #444;
+    }
+
+    .project-img {
+      width: 100%;
+      max-width: 780px;
+      display: block;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+
+    .see-more {
+      font-size: 14px;
+      color: #0f766e;
+      border: 1.5px solid #f59e0b;
+      border-radius: 6px;
+      padding: 2px 6px;
+      margin-left: 8px;
+      font-weight: bold;
+    }
+
+    .publication-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .publication-item h3 {
+      margin: 0 0 8px 0;
+      font-size: 19px;
+      line-height: 1.35;
+    }
+
+    .publication-item h3 a {
+      color: #1f2937;
+    }
+
+    .publication-item h3 a:hover {
+      color: #0f766e;
+    }
+
+    .publication-item p {
+      margin: 4px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .pub-venue {
+      color: #666;
+    }
+
+    .pub-category {
+      margin-top: 30px;
+      color: #0f766e;
+      font-size: 20px;
+    }
+
+    .teaching-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 25px;
+      padding: 22px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .teaching-date {
+      font-weight: bold;
+      color: #0f766e;
+      font-size: 16px;
+    }
+
+    .teaching-item h3 {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+    }
+
+    .teaching-item p {
+      margin: 5px 0;
+      font-size: 16px;
+      line-height: 1.55;
+      color: #555;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding: 25px;
+      text-align: center;
+      background: #f8fafc;
+      color: #555;
+      font-size: 15px;
+    }
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.keywords span {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #0f766e;
+  border-radius: 8px;
+  padding: 9px 13px;
+  font-size: 16px;
+  color: #2f3542;
+}
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="name">Razan Mhanna</div>
+  <div>
+    <a href="#" onclick="showPage('about')">About</a>
+    <a href="#" onclick="showPage('research')">Research</a>
+    <a href="#" onclick="showPage('publications')">Publications</a>
+    <a href="#" onclick="showPage('teaching')">Teaching</a>
+    <a href="#" onclick="showPage('cv')">CV</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <aside class="sidebar">
+    <img src="profile.jpg" alt="Razan Mhanna" class="photo">
+
+    <h2>Razan Mhanna</h2>
+    <p>
+      PhD Candidate in Applied Mathematics, specializing in graph-based modeling
+      of functional brain connectivity.
+    </p>
+
+    <div class="profile-info">
+      <p><i class="fa-solid fa-location-dot"></i> Grenoble, France</p>
+
+      <p>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <a href="https://scholar.google.com/citations?user=qtbkevEAAAAJ&hl=fr" target="_blank">Google Scholar</a>
+      </p>
+
+      <p>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:razan.mhanna@inria.fr">Email</a>
+      </p>
+
+      <p>
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/Razan-Mhanna" target="_blank">GitHub</a>
+      </p>
+
+      <p>
+        <i class="fa-brands fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/razan-mhanna-a918521a7/" target="_blank">LinkedIn</a>
+      </p>
+      <!--
+      <p>
+        <i class="fa-solid fa-file-pdf"></i>
+        <a href="CV_Razan_May_28.pdf" target="_blank">CV</a>
+      </p> -->
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <div id="about" class="hero page">
+      <h1>About</h1>
+
+      <p>
+        I am a PhD candidate at
+        <a href="https://www.inria.fr/" target="_blank">Inria</a> and
+        <a href="https://www.univ-grenoble-alpes.fr/" target="_blank">Université Grenoble Alpes</a>,
+        where I am a member of the
+        <a href="https://team.inria.fr/statify/" target="_blank">STATIFY</a> team, the
+        <a href="https://ljk.imag.fr/" target="_blank">Laboratoire Jean Kuntzmann (LJK)</a>,
+        and Team 5, Functional Neuroimaging and Cerebral Perfusion, of the
+        <a href="https://neurosciences.univ-grenoble-alpes.fr/fr/recherche-au-gin/equipes-recherche/equipe-neuroimagerie-fonctionnelle-et-perfusion-cerebrale" target="_blank">Grenoble Institute of Neuroscience (GIN)</a>.
+        I am supervised by
+        <a href="https://mistis.inrialpes.fr/people/achard/" target="_blank">Sophie Achard</a>
+        (UGA, CNRS, Inria), with scientific collaborations involving
+        <a href="https://richiardi.net/" target="_blank">Jonas Richiardi</a>
+        (Lausanne University Hospital and University of Lausanne, Switzerland) and
+        <a href="https://petersen.byu.edu/docs/index.html" target="_blank">Alexander Petersen</a>
+        (Brigham Young University, USA).
+      </p>
+
+      <p>
+        During my PhD, I was a Visiting PhD Scholar at
+        <a href="https://www.byu.edu/" target="_blank">Brigham Young University</a>,
+        supported by the IDEX Doctoral Mobility Scholarship. Before my PhD, I completed the
+        <a href="https://micas.telecom-paris.fr/" target="_blank">MICAS</a>
+        Master 2 program in Machine Learning, Communications, and Security at
+        <a href="https://www.telecom-paris.fr/" target="_blank">Télécom Paris</a>,
+        Institut Polytechnique de Paris, supported by the
+        <a href="https://digicosme.cnrs.fr/" target="_blank">LabEx DigiCosme Excellence Scholarship</a>.
+        I also earned an Engineering degree in Electrical and Electronic Engineering, with a specialization
+        in Computer Science and Telecommunications, from the
+        <a href="https://www.ul.edu.lb/" target="_blank">Lebanese University</a>.
+      </p>
+
+      <p>
+        My research focuses on developing graph-based machine learning methods for the analysis of resting-state functional brain connectivity. I investigate novel brain graph representations that account for uncertainty through distribution-valued edges, develop methods for comparing graphs using optimal transport, and study the performance and interpretability of graph neural networks, graph kernels, and classical machine learning models on both simulated and real neuroimaging datasets, including HCP, PIOP2, ABIDE, ADHD, and COMA.
+      </p>
+    </div>
+
+    <section id="research" class="page">
+      <h2>Research Interests</h2>
+       <div class="keywords">
+    <span>Brain functional connectivity</span>
+    <span>rs-fMRI</span>
+    <span>Graph neural networks</span>
+    <span>Graph kernels</span>
+    <span>Distribution-valued graphs</span>
+    <span>Uncertainty quantification</span>
+    <span>Optimal transport</span>
+    <span>Explainable AI (XAI)</span>
+    <span>Clinical neuroscience applications</span>
+    <span>Multimodal data integration (to be explored)</span>
+  </div>
+
+      <h2 style="margin-top:50px;">Research Projects</h2>
+
+      <div class="project">
+        <h3>
+          Distribution-valued Brain Connectivity
+          <a href="#" class="see-more">see more</a>
+        </h3>
+         <!--
+        <img src="project-connectivity.png" alt="Distribution-valued brain connectivity" class="project-img">
+        <p>
+          I develop graph-based representations of resting-state fMRI functional connectivity where brain edges
+          are modeled using distributions rather than single correlation values.
+        </p> -->
+      </div>
+
+      <div class="project">
+        <h3>
+          Graph Learning for rs-fMRI
+          <a href="#" class="see-more">see more</a>
+        </h3> <!--
+        <img src="project-graph-learning.png" alt="Graph learning for rs-fMRI" class="project-img">
+        <p>
+          I evaluate graph neural networks, graph kernels, and classical machine learning methods for classifying
+          brain graphs derived from resting-state fMRI.
+        </p> -->
+      </div>
+    </section>
+
+    <section id="publications" class="page">
+      <h2>Publications</h2>
+
+      <h3 class="pub-category">Conference Publications</h3>
+
+      <div class="publication-item">
+        <h3>
+          <a href="https://ieeexplore.ieee.org/abstract/document/11515640" target="_blank">
+            Distribution-based brain connectivity graph representations for classification
+          </a>
+        </h3>
+        <p><strong>Razan Mhanna</strong>, Sophie Achard, Alexander Petersen, Jonas Richiardi.</p>
+        <p class="pub-venue">IEEE ISBI 2026 · London, UK</p>
+      </div>
+
+      <div class="publication-item">
+        <h3>
+          <a href="https://openreview.net/forum?id=0p3r8I3jps" target="_blank">
+            A comprehensive benchmark of graph neural networks, graph kernels, and classical machine learning approaches on rs-fMRI brain graphs
+          </a>
+        </h3>
+        <p><strong>Razan Mhanna</strong>, Sophie Achard, Alexander Petersen, Jonas Richiardi.</p>
+        <p class="pub-venue">MIDL 2026 · Taipei, Taiwan</p>
+      </div>
+
+      <h3 class="pub-category">Scientific Communications and Posters</h3>
+
+      <div class="publication-item">
+        <h3>
+          <a href="https://scholar.google.com/scholar?oi=bibs&cluster=16802469906001515493&btnI=1&hl=fr" target="_blank">
+            From real to simulated realistic connectomes: A data generation framework for graph-based rs-fMRI coma studies
+          </a>
+        </h3>
+        <p class="pub-venue">EBRAINS Student Conference · Nice, France · 2026</p>
+      </div>
+
+      <div class="publication-item">
+        <h3>
+          <a href="https://inria.hal.science/hal-05572386/file/IABM26_Razan_Abstract%20%282%29.pdf" target="_blank">
+            Evaluating graph learning approaches for resting-state fMRI brain graph classification
+          </a>
+        </h3>
+        <p class="pub-venue">IABM 2026 · Lyon, France · 2026</p>
+      </div>
+
+      <div class="publication-item">
+        <h3>
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=qtbkevEAAAAJ&citation_for_view=qtbkevEAAAAJ:u-x6o8ySG0sC" target="_blank">
+            Hybrid CNN-XGBoost for rs-fMRI brain classification
+          </a>
+        </h3>
+        <p class="pub-venue">AI Summit · Salt Lake City, USA · 2025</p>
+      </div>
+
+      <div class="publication-item">
+        <h3>
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=qtbkevEAAAAJ&citation_for_view=qtbkevEAAAAJ:d1gkVwhDpl0C" target="_blank">
+            From networks to consciousness: Evaluating GraKeL graph kernels in coma patient analysis
+          </a>
+        </h3>
+        <p class="pub-venue">IABM 2025 · Nice, France · 2025</p>
+      </div>
+    </section>
+
+    <section id="teaching" class="page">
+      <h2>Teaching</h2>
+
+      <div class="teaching-item">
+        <div class="teaching-date">2023–present</div>
+        <div>
+          <h3>Complementary Course in Statistical Learning and Applications</h3>
+          <p>M1 Applied Mathematics · ENSIMAG, Université Grenoble Alpes</p>
+          <p>
+            Course coordinator:
+            <a href="https://plcrodrigues.github.io/" target="_blank">Dr. Pedro L.C. Rodrigues</a>
+          </p>
+          <a href="https://github.com/ISLA-Grenoble/2026-complementary" target="_blank">Course materials</a>
+        </div>
+      </div>
+
+      <div class="teaching-item">
+        <div class="teaching-date">2023–2025</div>
+        <div>
+          <h3>Practical Sessions in Image Processing</h3>
+          <p>MMIS 2A program, Bac+4 · ENSIMAG, Université Grenoble Alpes</p>
+          <p>
+            Course coordinator:
+            <a href="https://membres-ljk.imag.fr/Valerie.Perrier/" target="_blank">Prof. Valérie Perrier</a>
+          </p>
+          <a href="https://ensimag.grenoble-inp.fr/fr/formation/image-processing-4mmti6" target="_blank">4MMTI6</a>
+        </div>
+      </div>
+
+      <div class="teaching-item">
+        <div class="teaching-date">2023–2025</div>
+        <div>
+          <h3>Practical Sessions in Language Communication</h3>
+          <p>INFO program, Bac+4 · Polytech Grenoble</p>
+          <p>
+            Course coordinator:
+            <a href="https://sites.google.com/site/fabienringeval/home" target="_blank">Dr. Fabien Ringeval</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv" class="page">
+      <h2>CV</h2>
+      <p>
+        My full academic CV is available here:
+        <i class="fa-solid fa-file-pdf"></i>
+        <a href="CV_Razan_May_28.pdf" target="_blank">Download CV</a>.
+      </p>
+    </section>
+
+    <section id="contact" class="page">
+      <h2>Contact</h2>
+
+      <p>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:razan.mhanna@inria.fr">razan.mhanna [at] inria.fr</a>
+      </p>
+
+      <p>
+        <i class="fa-solid fa-location-dot"></i>
+        <strong>Inria Grenoble</strong><br>
+        Office G201<br>
+        655 Avenue de l'Europe<br>
+        38330 Montbonnot-Saint-Martin, France
+      </p>
+
+      <p>
+        <i class="fa-solid fa-building-columns"></i>
+        <strong>Laboratoire Jean Kuntzmann (LJK)</strong><br>
+        Office 123, IMAG Building<br>
+        150 Place du Torrent<br>
+        38400 Saint-Martin-d'Hères, France
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  © 2026 Razan Mhanna
+</footer>
+
+<script>
+  function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+
+    document.getElementById(pageId).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  showPage('about');
+</script>
+
+</body>
+</html>
