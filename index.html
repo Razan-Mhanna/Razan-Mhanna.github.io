@@ -265,6 +265,40 @@
   font-size: 16px;
   color: #2f3542;
 }
+    .service-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  padding: 12px 0;
+}
+
+.service-date {
+  font-weight: bold;
+  color: #0f766e;
+  font-size: 15px;
+}
+
+.service-item p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.link-box {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 7px 12px;
+  border: 1px solid #0f766e;
+  border-radius: 6px;
+  color: #0f766e;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.link-box:hover {
+  background: #0f766e;
+  color: white;
+  text-decoration: none;
+}
   </style>
 </head>
 
@@ -277,6 +311,7 @@
     <a href="#" onclick="showPage('research')">Research</a>
     <a href="#" onclick="showPage('publications')">Publications</a>
     <a href="#" onclick="showPage('teaching')">Teaching</a>
+    <a href="#" onclick="showPage('service')">Academic Service</a>
     <a href="#" onclick="showPage('cv')">CV</a>
     <a href="#" onclick="showPage('contact')">Contact</a>
   </div>
@@ -513,6 +548,85 @@
         </div>
       </div>
     </section>
+<section id="service" class="page">
+  <h2>Academic Service</h2>
+
+<h3 class="pub-category">Scientific Community</h3>
+
+<div class="service-item">
+  <div class="service-date">2025–present</div>
+  <div>
+    <p>
+      <strong>
+        Co-organizer of the
+        <!-- <a href="https://phdseminar.gitlabpages.inria.fr/" target="_blank"> -->
+          INRIA Grenoble PhD Seminars
+        </a>
+      </strong>,
+      <a href="https://www.inria.fr/en/inria-centre-university-grenoble-alpes" target="_blank">
+        Inria Centre of Université Grenoble Alpes
+      </a>.
+      Organization and coordination of monthly scientific seminars for PhD students,
+      engineers, and postdoctoral researchers.
+    </p>
+    <a href="https://phdseminar.gitlabpages.inria.fr/" target="_blank" class="link-box">
+  Visit the seminar website 
+</a>
+  </div>
+</div>
+
+<div class="service-item">
+  <div class="service-date">2026</div>
+  <div>
+    <p>
+      <strong>Student Organizing Committee Member</strong>,
+      <a href="https://iabm2026.sciencesconf.org/" target="_blank">
+        IABM 2026 – French Conference on Artificial Intelligence in Biomedical Imaging
+      </a>,
+      Lyon, France.
+      Participation sin the scientific organization of the IABM Young Researchers Network (Réseau IABM Jeunes Chercheurs et Jeunes Chercheuses).
+    </p>
+  </div>
+</div>
+
+<h3 class="pub-category">Student Mentoring</h3>
+
+  <div class="service-item">
+    <div class="service-date">07/2026–09/2026</div>
+    <div>
+      <p>
+        <strong> Abeer Obeid, M1 Mathematics and Applications intern</strong>,
+        Université Grenoble Alpes.
+        <em>Attention-based fusion of classical and distribution-valued brain connectivity graph representations</em>,
+        LJK, Université Grenoble Alpes.
+      </p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <div class="service-date">05/2026–07/2026</div>
+    <div>
+      <p>
+        <strong>Yigit Aykut, Erasmus+ intern</strong>,
+        Galatasaray University, Istanbul.
+        <em>Implementation and Evaluation of Spatiotemporal Deep Neural Networks for Resting-State fMRI Time-Series Classification</em>,
+        LJK, Université Grenoble Alpes.
+      </p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <div class="service-date">05/2024–07/2024</div>
+    <div>
+      <p>
+        <strong>Théolien Bierhoff, M1 Applied Mathematics intern</strong>,
+        Université Grenoble Alpes.
+        <em>Graph neural networks for rs-fMRI brain graph classification, including implementation and reproduction of a recent article</em>,
+        Inria Centre at Université Grenoble Alpes.
+      </p>
+    </div>
+  </div>
+</section>
 
     <section id="cv" class="page">
       <h2>CV</h2>
