@@ -179,7 +179,127 @@
       margin-left: 8px;
       font-weight: bold;
     }
+    /* =========================================================
+   PUBLICATIONS
+========================================================= */
 
+#publications {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+#publications > h2 {
+  margin-bottom: 36px;
+}
+
+/* Category title */
+
+.pub-category {
+  margin: 34px 0 20px;
+  color: #167875;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+/* Each publication */
+
+.publication-item {
+  margin: 0;
+  padding: 20px 0 24px;
+  border-bottom: 1px solid #dfe3e6;
+}
+
+.publication-title {
+  margin: 0 0 8px;
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.publication-title a {
+  color: #17233a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.publication-title a:hover {
+  color: #167875;
+}
+
+/* Authors */
+
+.publication-authors {
+  margin: 0 0 6px;
+  color: #263248;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.publication-authors strong {
+  font-weight: 700;
+}
+
+/* Venue */
+
+.publication-venue {
+  margin: 0;
+  color: #5f6672;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.publication-venue em {
+  font-style: italic;
+}
+
+/* Publication links */
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.publication-links a {
+  display: inline-block;
+  padding: 5px 11px;
+
+  border: 1px solid #167875;
+  border-radius: 3px;
+
+  color: #167875;
+  background: transparent;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.publication-links a:hover {
+  background: #167875;
+  color: #ffffff;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+  .publication-title {
+    font-size: 1.08rem;
+  }
+
+  .publication-authors,
+  .publication-venue {
+    font-size: 0.93rem;
+  }
+}
     .publication-item {
       padding: 14px 0;
       border-bottom: 1px solid #e5e7eb;
@@ -442,7 +562,207 @@
         </p> -->
       </div>
     </section>
+    <section id="publications" class="page">
+  <h2>Publications</h2>
 
+  <!-- Conference publications -->
+  <h3 class="pub-category">Conference Publications</h3>
+
+  <article class="publication-item">
+    <h3 class="publication-title">
+      <a
+        href="https://ieeexplore.ieee.org/abstract/document/11515640"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Distribution-based brain connectivity graph representations for classification
+      </a>
+    </h3>
+
+    <p class="publication-authors">
+      <strong>Razan Mhanna</strong>, Sophie Achard, Alexander Petersen,
+      Jonas Richiardi.
+    </p>
+
+    <p class="publication-venue">
+      <em>IEEE International Symposium on Biomedical Imaging</em>,
+      London, United Kingdom, 2026
+    </p>
+
+    <div class="publication-links">
+      <a
+        href="https://ieeexplore.ieee.org/abstract/document/11515640"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Abstract
+      </a>
+
+      <a
+        href="https://ieeexplore.ieee.org/abstract/document/11515640"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        PDF
+      </a>
+    </div>
+  </article>
+
+  <article class="publication-item">
+    <h3 class="publication-title">
+      <a
+        href="https://openreview.net/forum?id=0p3r8I3jps"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        A comprehensive benchmark of graph neural networks, graph kernels,
+        and classical machine learning approaches on rs-fMRI brain graphs
+      </a>
+    </h3>
+
+    <p class="publication-authors">
+      <strong>Razan Mhanna</strong>, Sophie Achard, Alexander Petersen,
+      Jonas Richiardi.
+    </p>
+
+    <p class="publication-venue">
+      <em>Medical Imaging with Deep Learning</em>,
+      Taipei, Taiwan, 2026
+    </p>
+
+    <div class="publication-links">
+      <a
+        href="https://openreview.net/forum?id=0p3r8I3jps"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Abstract
+      </a>
+
+      <a
+        href="https://openreview.net/forum?id=0p3r8I3jps"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        OpenReview
+      </a>
+    </div>
+  </article>
+
+  <!-- Scientific communications -->
+  <h3 class="pub-category">Scientific Communications and Posters</h3>
+
+  <article class="publication-item">
+    <h3 class="publication-title">
+      <a
+        href="https://scholar.google.com/scholar?oi=bibs&cluster=16802469906001515493&btnI=1&hl=fr"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        From real to simulated realistic connectomes: A data generation
+        framework for graph-based rs-fMRI coma studies
+      </a>
+    </h3>
+
+    <p class="publication-venue">
+      <em>EBRAINS Student Conference</em>,
+      Nice, France, 2026
+    </p>
+
+    <div class="publication-links">
+      <a
+        href="https://scholar.google.com/scholar?oi=bibs&cluster=16802469906001515493&btnI=1&hl=fr"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Details
+      </a>
+    </div>
+  </article>
+
+  <article class="publication-item">
+    <h3 class="publication-title">
+      <a
+        href="https://inria.hal.science/hal-05572386/file/IABM26_Razan_Abstract%20%282%29.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Evaluating graph learning approaches for resting-state fMRI brain
+        graph classification
+      </a>
+    </h3>
+
+    <p class="publication-venue">
+      <em>IABM 2026</em>,
+      Lyon, France, 2026
+    </p>
+
+    <div class="publication-links">
+      <a
+        href="https://inria.hal.science/hal-05572386/file/IABM26_Razan_Abstract%20%282%29.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        PDF
+      </a>
+    </div>
+  </article>
+
+  <article class="publication-item">
+    <h3 class="publication-title">
+      <a
+        href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=qtbkevEAAAAJ&citation_for_view=qtbkevEAAAAJ:u-x6o8ySG0sC"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Hybrid CNN-XGBoost for rs-fMRI brain classification
+      </a>
+    </h3>
+
+    <p class="publication-venue">
+      <em>AI Summit</em>,
+      Salt Lake City, United States, 2025
+    </p>
+
+    <div class="publication-links">
+      <a
+        href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=qtbkevEAAAAJ&citation_for_view=qtbkevEAAAAJ:u-x6o8ySG0sC"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Details
+      </a>
+    </div>
+  </article>
+
+  <article class="publication-item">
+    <h3 class="publication-title">
+      <a
+        href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=qtbkevEAAAAJ&citation_for_view=qtbkevEAAAAJ:d1gkVwhDpl0C"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        From networks to consciousness: Evaluating GraKeL graph kernels in
+        coma patient analysis
+      </a>
+    </h3>
+
+    <p class="publication-venue">
+      <em>IABM 2025</em>,
+      Nice, France, 2025
+    </p>
+
+    <div class="publication-links">
+      <a
+        href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=qtbkevEAAAAJ&citation_for_view=qtbkevEAAAAJ:d1gkVwhDpl0C"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Details
+      </a>
+    </div>
+  </article>
+</section>
     <section id="publications" class="page">
       <h2>Publications</h2>
 
